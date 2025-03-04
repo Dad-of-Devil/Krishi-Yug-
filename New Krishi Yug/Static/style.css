@@ -1,0 +1,148 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background:  #f4efef;
+    color: #f4efef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated crop-related background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.shutterstock.com/image-photo/growing-crops-on-fertile-soil-600nw-1720714807.jpg');
+    background-size:cover ;
+    background-position: center;
+    animation: cropAnimation 30s infinite alternate ease-in-out;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@keyframes cropAnimation {
+    0% {
+        transform: scale(1);
+        filter: brightness(0.8);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(0.8);
+    }
+}
+
+.container1 {
+    background: #c0f5ff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    background: #f8f4f4;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 24px;
+    color: #2d2626;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #383232;
+}
+
+input[type="number"], input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #6c63ff;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f25dbc;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+.footer a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 20px;
+    
+}
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Yug - Crop Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('Static', filename='style.css') }}">
+
+</head>
+<body>
+ 
+    <div class="container">
+        <h2>Krishi Yug - Crop Recommendation System</h2>
+        <form action="/predict" method="post">
+            <label for="N">Nitrogen (N):</label>
+            <input type="number" name="N" step="any" placeholder="Enter Nitrogen content" required>
+
+            <label for="P">Phosphorus (P):</label>
+            <input type="number" name="P" step="any" placeholder="Enter Phosphorus content" required>
+
+            <label for="K">Potassium (K):</label>
+            <input type="number" name="K" step="any" placeholder="Enter Potassium content" required>
+
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" name="temperature" step="any" placeholder="Enter temperature in Celsius" required>
+
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" name="humidity" step="any" placeholder="Enter humidity percentage" required>
+
+            <label for="ph">pH Level:</label>
+            <input type="number" name="ph" step="0.1" placeholder="Enter soil pH level" required>
+
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="number" name="rainfall" step="any" placeholder="Enter rainfall in mm" required>
+
+            <input type="submit" value="Predict Crop">
+        </form>
+        <div class="footer">
+            <p>Powered by <a href="#">Krishi Yug</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Recommendation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>Crop Recommendation</h1>
+    <form action="{{ url_for('prediction') }}" method="POST">
+      <div class="form-group">
+        <label for="nitrogen">Nitrogen Level</label>
+        <input type="number" id="nitrogen" name="nitrogen" placeholder="Enter Nitrogen Level" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phosphorus">Phosphorus Level</label>
+        <input type="number" id="phosphorus" name="phosphorus" placeholder="Enter Phosphorus Level" required>
+      </div>
+
+      <div class="form-group">
+        <label for="potassium">Potassium Level</label>
+        <input type="number" id="potassium" name="potassium" placeholder="Enter Potassium Level" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pH">Soil pH</label>
+        <input type="number" id="pH" name="pH" placeholder="Enter Soil pH" required>
+      </div>
+
+      <div class="form-group">
+        <label for="temperature">Temperature (°C)</label>
+        <input type="number" id="temperature" name="temperature" placeholder="Enter Temperature" required>
+      </div>
+
+      <div class="form-group">
+        <label for="humidity">Humidity (%)</label>
+        <input type="number" id="humidity" name="humidity" placeholder="Enter Humidity" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rainfall">Rainfall (mm)</label>
+        <input type="number" id="rainfall" name="rainfall" placeholder="Enter Rainfall" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Recommend Crop</button>
+    </form>
+
+    <div class="footer">
+      <p>Powered by <a href="#">Krishi Yug</a></p>
+    </div>
+
+    {% if result %}
+      <div class="card" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+        <h5>Recommended Crop for Cultivation:</h5>
+        <p>{{ result }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
